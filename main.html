@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alicia´s Kärleks lotteri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .message {
+            font-size: 24px;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 500px;
+        }
+        .win {
+            background-color: #f0f8ff;
+            border: 2px solid #8ac7ff;
+        }
+        .small-prize {
+            background-color: #ffebcd;
+            border: 2px solid #ffb347;
+        }
+        .medium-prize {
+            background-color: #e0ffe0;
+            border: 2px solid #77c93d;
+        }
+        .big-prize {
+            background-color: #ffccff;
+            border: 2px solid #ff66cc;
+        }
+        .try-again {
+            background-color: #eeb0b0;
+            border: 2px solid #ef3636;
+        }
+        .reward {
+            font-size: 20px;
+            color: #de3388;
+        }
+        .big-prize2 {
+            background-color: #eb1deb;
+            border: 2px solid #69088d;
+        }
+        .big-prize3 {
+            background-color: #ffe0e0;
+            border: 2px solid #f60202;
+        }
+        
+        
+    
+    </style>
+</head>
+<body>
+    <h1>Kärleksspelet</h1>
+    <div id="result" class="message"></div>
+    <script>
+        // Array of possible lottery outcomes
+        const outcomes = [
+            {
+                result: "Du vann ett litet pris!",
+                reward: "En kram och en puss!",
+                class: "small-prize"
+            },
+            {
+                result: "Congratulations! You won a medium prize!",
+                reward: "A lovely dinner and a cozy movie night!",
+                class: "medium-prize"
+            },
+            {
+                result: "Wow! You won the big prize!",
+                reward: "A weekend getaway for two and a special surprise!",
+                class: "big-prize"
+            },
+            {
+                result: "Wow! You won the big prize!",
+                reward: "A weekend getaway for two and a special surprise!",
+                class: "big-prize2"
+            },
+            {
+                result: "Oops, not this time.",
+                reward: "Your consolation: A surprise kiss and a promise of another lottery!",
+                class: "big-prize3"
+            },
+            {
+                result: "Aj Aj Aj, en JÄVLA NITLOTT.",
+                reward: "Till din tröst: Du är iallafall söt trots att du suger i spel.",
+                class: "try-again"
+            },
+            {
+                result: "Aj Aj Aj, en JÄVLA NITLOTT.",
+                reward: "Till din tröst: Du är iallafall söt trots att du suger i spel.",
+                class: "try-again"
+            },
+            {
+                result: "Aj Aj Aj, en JÄVLA NITLOTT.",
+                reward: "Till din tröst: Du är iallafall söt trots att du suger i spel.",
+                class: "try-again"
+            },
+            {
+                result: "Aj Aj Aj, en JÄVLA NITLOTT.",
+                reward: "Till din tröst: Du är iallafall söt trots att du suger i spel.",
+                class: "try-again"
+            },
+            
+        ];
+
+        // Randomly select an outcome
+        const randomOutcome = outcomes[Math.floor(Math.random() * outcomes.length)];
+
+        // Display the outcome and reward
+        const message = randomOutcome.result;
+        const reward = randomOutcome.reward;
+        const outcomeClass = randomOutcome.class;
+
+        document.getElementById('result').classList.add(outcomeClass);
+        document.getElementById('result').innerHTML = `
+            <h2>${message}</h2>
+            <p class="reward">${reward}</p>
+        `;
+    </script>
+</body>
+</html>
